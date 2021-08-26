@@ -31,6 +31,10 @@ def main():
     # Armazena o valor que gera tal número de passos
     maior_n = 0
 
+    # dicionário para armazenar o número de passos gerados por cada número
+    # para evitar repetição de verificações por números já consultados
+    dicionario_passos = {}
+
     for i in range(1, 1000000):
         num_passos = num_de_passos(i)
 
