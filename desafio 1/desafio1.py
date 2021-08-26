@@ -4,7 +4,7 @@ def num_de_passos(n, dicionario_passos):
     num_passos = 0
     n_temp = n
 
-    # uso do while true ara que o loop seja executado pelo menos 1 vez
+    # uso do while true para que o loop seja executado pelo menos 1 vez
     while True:
         # verifica se já existe um número de passos registrado para o
         # valor de n atual
