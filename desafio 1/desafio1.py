@@ -10,7 +10,9 @@ def num_de_passos(n):
             n = n / 2
 
         else:
-            num_passos += 1
+            # Aumenta a contagem de passos em 2, porque estão sendo feitos
+            # 2 passos na mesma fórmula
+            num_passos += 2
             # Todo número n, ímpar, quando aplicado à fórmula 3n + 1
             # torna-se um número par, então podemos fazer 2 passos em 1
             n = (3*n + 1)//2
