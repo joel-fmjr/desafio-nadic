@@ -37,7 +37,7 @@ def num_de_passos(n, dicionario_passos):
     return num_passos
 
 
-def main():
+def main(n):
     maior_num_passos = 0    # maior número de passos para voltar a 1
     maior_n = 0             # valor que gera tal número de passos
 
@@ -45,7 +45,7 @@ def main():
     # para evitar repetição de verificações por números já consultados
     dicionario_passos = {}
 
-    for i in range(1, 1000000):
+    for i in range(1, n):
         num_passos = num_de_passos(i, dicionario_passos)
 
         # atualiza as variáveis que armazenam o maior número de passos
@@ -58,4 +58,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main(1000000)
