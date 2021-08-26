@@ -8,7 +8,8 @@ def num_de_passos(n, dicionario_passos):
     while True:
         # verifica se já existe um número de passos registrado para o
         # valor de n atual
-        passos_temp = dicionario_passos.get(n_temp)
+        if n_temp <= n:
+            passos_temp = dicionario_passos.get(n_temp)
 
         # caso exista, armazena na varíavel que será retornada
         if passos_temp is not None:
@@ -17,7 +18,7 @@ def num_de_passos(n, dicionario_passos):
 
         if n_temp % 2 == 0:
             num_passos += 1
-            n_temp = n_temp / 2
+            n_temp = n_temp // 2
 
         else:
             # aumenta a contagem de passos em 2, porque estão sendo feitos
@@ -25,7 +26,7 @@ def num_de_passos(n, dicionario_passos):
             num_passos += 2
             # todo número n, ímpar, quando aplicado à fórmula 3n + 1
             # torna-se um número par, então podemos fazer 2 passos em 1
-            n_temp = (3*n_temp + 1)/2
+            n_temp = (3 * n_temp + 1) // 2
 
         # parar o loop em n = 1, depois de todas as contagens de passos,
         # para que não entre em loop infinito
@@ -37,7 +38,7 @@ def num_de_passos(n, dicionario_passos):
     return num_passos
 
 
-def main(n):
+def main(n, m):
     maior_num_passos = 0    # maior número de passos para voltar a 1
     maior_n = 0             # valor que gera tal número de passos
 
@@ -45,7 +46,7 @@ def main(n):
     # para evitar repetição de verificações por números já consultados
     dicionario_passos = {}
 
-    for i in range(1, n):
+    for i in range(1, m):
         num_passos = num_de_passos(i, dicionario_passos)
 
         # atualiza as variáveis que armazenam o maior número de passos
@@ -58,4 +59,4 @@ def main(n):
 
 
 if __name__ == '__main__':
-    main(1000000)
+    main(1, 1000000)
