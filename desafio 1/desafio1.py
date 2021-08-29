@@ -44,7 +44,7 @@ def main(n, m):
 
     # lista para armazenar o número de passos gerados por cada número
     # para evitar repetição de verificações por números já consultados
-    lista_passos = [0] * 1000000
+    lista_passos = [0] * m
 
     for i in range(n, m):
         num_passos = num_de_passos(i, lista_passos)
